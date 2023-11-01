@@ -20,9 +20,47 @@ namespace ConsoleApp7
             //ex7(rnd);
             //ex8(rnd);
             //ex9(rnd);
-
+            //ex10(rnd);
+        }
+private static void ex10(Random rnd)
+{
+    string password = string.Empty;
+    int kol = rnd.Next(8, 16);
+    for (int i = 0; i < kol; i++)
+    {
+        int choice = rnd.Next(1, 5);
+        if (choice == 1)
+        {
+            string let = "abcdefghijklmnopqrstuvwxyz";
+            int letters = rnd.Next(0, let.Length);
+            char letter = let[letters];
+            password += letter;
+        }
+        if (choice == 2)
+        {
+            string let = "1234567890";
+            int letters = rnd.Next(0, let.Length);
+            char letter = let[letters];
+            password += letter;
+        }
+        if (choice == 3)
+        {
+            string let = "abcdefghijklmnopqrstuvwxyz".ToUpper();
+            int letters = rnd.Next(0, let.Length);
+            char letter = let[letters];
+            password += letter;
+        }
+        if (choice == 4)
+        {
+            string let = "!@#$%^&*()<>;:|_-*";
+            int letters = rnd.Next(0, let.Length);
+            char letter = let[letters];
+            password += letter;
         }
 
+    }
+    Console.WriteLine(password);
+}
         private static void ex9(Random rnd)
         {
             string symbols = "!@#$%^&*()<>;:|_-";
